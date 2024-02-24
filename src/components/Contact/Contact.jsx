@@ -9,7 +9,7 @@ import css from './Contact.module.css';
 //   { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
 // ];
 
-export default function Contact({ data }) {
+export default function Contact({ data, onDelete }) {
   return (
     <div className={css.container}>
       <div>
@@ -22,7 +22,11 @@ export default function Contact({ data }) {
           <p className={css.text}> {data.number}</p>{' '}
         </div>
       </div>
-      <button className={css.button} type="button">
+      <button
+        className={css.button}
+        type="button"
+        onClick={() => onDelete(data.id)}
+      >
         Delete
       </button>
     </div>
