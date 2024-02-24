@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ContactList from '../ContactList/ContactList';
 import SearchBox from '../SearchBox/SearchBox';
+import ContactForm from '../ContactForm/ContactForm';
 import css from './App.module.css';
 
 const phones = [
@@ -14,6 +15,12 @@ export default function App() {
   const [contactsState, setContactsState] = useState(phones);
   const [filterState, setFilterState] = useState('');
 
+  const addContact = newContact => {
+    setContactsState(prevContact => {
+      return [...prevContact, newContact];
+    });
+  };
+
   const deleteContact = idContact => {
     setContactsState(prevContacts => {
       return prevContacts.filter(contact => contact.id !== idContact);
@@ -26,8 +33,8 @@ export default function App() {
 
   return (
     <div className={css.container}>
-      <p>{filterState}</p>
       <h1 className={css.title}>Phonebook</h1>
+      <ContactForm onAdd={addContact}></ContactForm>
       <SearchBox value={filterState} onFilter={setFilterState} />
       <ContactList
         phones={visibleContact}

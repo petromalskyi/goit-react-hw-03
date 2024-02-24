@@ -1,0 +1,29 @@
+.form {
+  width: 300px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.field {
+  padding: 6px;
+}
+
+.button {
+  display: block;
+  padding: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: inherit;
+}
+
+.error {
+  color: red;
+}

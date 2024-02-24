@@ -1,9 +1,10 @@
 .container {
+  width: 1400px;
   padding-top: 20px;
   margin-left: 20px;
 }
 
 .title {
   font-size: 32px;
-  font-weight: 700;
+  margin-bottom: 20px;
 }
